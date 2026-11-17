@@ -1,0 +1,293 @@
+{
+  "name": "Christian Ludovic",
+  "handle": "chriscooldev",
+  "role": "Software Engineer & Full-Stack Web Developer",
+  "location": "Gümüşhane, Turkey",
+  "avatar": "/images/avatar.webp",
+  "website": {
+    "label": "github.com/ChrisCoolDev",
+    "url": "https://github.com/ChrisCoolDev"
+  },
+  "status": {
+    "enabled": true,
+    "emoji": "💻",
+    "text": "Open to software engineering & front-end opportunities"
+  },
+  "about": "Software Engineering student and full-stack web developer with 3+ years of hands-on experience building fast, user-centered web products and SaaS platforms with Next.js, TypeScript, and modern UI engineering. Passionate about bridging product design and clean, scalable code.",
+  "site": {
+    "title": "Christian Ludovic",
+    "description": "Software Engineer & Full-Stack Web Developer crafting fast, user-centered web products with Next.js, TypeScript, and thoughtful design.",
+    "url": "http://localhost:3000",
+    "authorEmail": "talchrist10@gmail.com",
+    "rssTitle": "Christian Ludovic — Writing",
+    "rssDescription": "Engineering notes, product thoughts, and essays by Christian Ludovic."
+  },
+  "sections": {
+    "workExperience": [
+      {
+        "id": "work-2",
+        "duration": "Dec 2024 — Feb 2025",
+        "title": "Front-end Developer",
+        "organization": "Yb_digitall",
+        "location": "Remote",
+        "description": "Built responsive, conversion-focused web applications and reusable UI systems using React, Next.js, and Tailwind CSS in close collaboration with product stakeholders."
+      },
+      {
+        "id": "work-3",
+        "duration": "Oct 2022 — Mar 2023",
+        "title": "Junior Product Designer",
+        "organization": "Ejara",
+        "location": "Cameroon",
+        "description": "Designed mobile-first fintech user flows, interactive prototypes, and design system components for a leading Francophone African crypto and savings platform."
+      },
+      {
+        "id": "work-4",
+        "duration": "Jan 2022 — Jul 2022",
+        "title": "Web Designer",
+        "organization": "Glom Sarl",
+        "location": "Cameroon",
+        "description": "Crafted brand-aligned corporate websites, landing pages, and responsive layouts from wireframes to production deployment."
+      }
+    ],
+    "freelance": [
+      {
+        "id": "freelance-1",
+        "duration": "Jul 2025 — Present",
+        "title": "Freelance Front-end Developer",
+        "organization": "Upwork",
+        "location": "Remote",
+        "description": "Delivering production Next.js, React, and TypeScript interfaces for international clients with a focus on performance, accessibility, and clean component architecture."
+      },
+      {
+        "id": "freelance-2",
+        "duration": "2025",
+        "title": "Front-end Engineer (Contract)",
+        "organization": "Connecteur360",
+        "location": "Remote",
+        "description": "Built the full-stack Next.js & TypeScript B2B SaaS platform connecting African producers with international buyers, including an interactive product catalog and responsive UI.",
+        "url": "https://connecteur360.com",
+        "attachments": [
+          {
+            "id": "freelance-att-1",
+            "src": "/images/connecteur360.png",
+            "alt": "Connecteur360 preview"
+          }
+        ]
+      },
+      {
+        "id": "freelance-3",
+        "duration": "2024",
+        "title": "Front-end Developer (Contract)",
+        "organization": "Nidouye",
+        "location": "Remote",
+        "description": "Engineered modern responsive interfaces, smooth user journeys, and SEO-friendly pages with Next.js and Tailwind CSS for a French-market real-estate platform.",
+        "url": "https://nidouye.fr",
+        "attachments": [
+          {
+            "id": "freelance-att-2",
+            "src": "/images/nidouye.png",
+            "alt": "Nidouye preview"
+          }
+        ]
+      }
+    ],
+    "projects": [],
+    "speaking": [],
+    "sideProjects": [
+      {
+        "id": "side-1",
+        "duration": "2025",
+        "title": "QAlive",
+        "description": "Real-time QA & live collaboration web platform built for fast feedback loops and modern product teams.",
+        "url": "https://qalive.ink",
+        "attachments": [
+          {
+            "id": "side-att-1",
+            "src": "/images/qalive.png",
+            "alt": "QAlive preview"
+          }
+        ]
+      },
+      {
+        "id": "side-2",
+        "duration": "2025",
+        "title": "Connecteur360",
+        "description": "B2B SaaS connecting African producers with international buyers — built the full-stack Next.js & TypeScript web platform, interactive product catalog, and responsive UI.",
+        "url": "https://connecteur360.com",
+        "attachments": [
+          {
+            "id": "side-att-2",
+            "src": "/images/connecteur360.png",
+            "alt": "Connecteur360 preview"
+          }
+        ]
+      },
+      {
+        "id": "side-3",
+        "duration": "2024",
+        "title": "Nidouye",
+        "description": "French-market real-estate & lifestyle web platform — engineered modern responsive interfaces, smooth user journeys, and SEO-friendly pages with Next.js and Tailwind CSS.",
+        "url": "https://nidouye.fr",
+        "attachments": [
+          {
+            "id": "side-att-3",
+            "src": "/images/nidouye.png",
+            "alt": "Nidouye preview"
+          }
+        ]
+      },
+      {
+        "id": "side-4",
+        "duration": "2024",
+        "title": "Haku Studio",
+        "description": "Creative digital studio showcase featuring smooth micro-interactions, minimalist typography, and responsive editorial layouts.",
+        "attachments": [
+          {
+            "id": "side-att-4",
+            "src": "/images/haku-studio.png",
+            "alt": "Haku Studio preview"
+          }
+        ]
+      },
+      {
+        "id": "side-5",
+        "duration": "2024",
+        "title": "Calendar",
+        "description": "Clean interactive scheduling and event management web app focused on speed, keyboard ergonomics, and clarity.",
+        "attachments": [
+          {
+            "id": "side-att-5",
+            "src": "/images/calendar.png",
+            "alt": "Calendar app preview"
+          }
+        ]
+      },
+      {
+        "id": "side-6",
+        "duration": "2023",
+        "title": "Yeezy Clone Web App",
+        "description": "High-contrast e-commerce storefront recreation showcasing minimalist product grids, cart state, and fluid page transitions.",
+        "attachments": [
+          {
+            "id": "side-att-6",
+            "src": "/images/yeezy.png",
+            "alt": "Yeezy Clone Web App preview"
+          }
+        ]
+      },
+      {
+        "id": "side-7",
+        "duration": "2024",
+        "title": "Personal Blog (Astro + Notion)",
+        "description": "Fast static blog & portfolio powered by Astro, MDX, and Notion as a headless CMS — exploring clean typography and minimal developer writing.",
+        "url": "https://sirhc-eight.vercel.app/blog"
+      }
+    ],
+    "education": [
+      {
+        "id": "edu-1",
+        "duration": "2023 — Present",
+        "title": "B.Sc. in Software Engineering (3rd Year)",
+        "organization": "Gumushane University of Technology",
+        "location": "Gümüşhane, Turkey",
+        "url": "https://www.gumushane.edu.tr/"
+      },
+      {
+        "id": "edu-2",
+        "duration": "2022",
+        "title": "German Language Certificate (B1)",
+        "organization": "SLZ Douala",
+        "location": "Douala, Cameroon",
+        "url": "https://www.slz-douala.org/fr/"
+      },
+      {
+        "id": "edu-3",
+        "duration": "2020 — 2022",
+        "title": "DUT in Electrical Engineering (Automation & Industrial Computing)",
+        "organization": "IUT Fotso Victor",
+        "location": "Bandjoun, Cameroon",
+        "url": "https://www.univ-dschang.org/iutfv-bandjoun/"
+      }
+    ],
+    "reading": [
+      {
+        "id": "read-1",
+        "duration": "Reading",
+        "title": "The Design of Everyday Things",
+        "location": "Don Norman",
+        "description": "Timeless principles on affordances, signifiers, and human-centered objects.",
+        "url": "https://example.com"
+      },
+      {
+        "id": "read-2",
+        "duration": "2024",
+        "title": "Creative Selection",
+        "location": "Ken Kocienda",
+        "description": "Inside Apple's demo-driven design process during the original iPhone era.",
+        "url": "https://example.com"
+      },
+      {
+        "id": "read-3",
+        "duration": "2023",
+        "title": "Shape Up",
+        "location": "Ryan Singer",
+        "description": "Stop running in circles and ship work that matters.",
+        "url": "https://basecamp.com/shapeup"
+      }
+    ],
+    "travels": [
+      {
+        "id": "travel-1",
+        "duration": "2024",
+        "title": "Autumn week in Lisbon",
+        "location": "Lisbon, Portugal",
+        "description": "Explored local cafes, coastal trails, and botanical gardens with a film camera.",
+        "attachments": [
+          {
+            "id": "travel-att-1",
+            "src": "/images/attachment-1.png",
+            "alt": "Attachment 1"
+          },
+          {
+            "id": "travel-att-2",
+            "src": "/images/attachment-2.png",
+            "alt": "Attachment 2"
+          }
+        ]
+      },
+      {
+        "id": "travel-2",
+        "duration": "2023",
+        "title": "Alpine trail & field notes",
+        "location": "Chamonix, France",
+        "description": "Three days hiking alpine ridges and sketching in a pocket notebook."
+      }
+    ],
+    "contact": [
+      {
+        "id": "contact-1",
+        "platform": "Email",
+        "label": "talchrist10@gmail.com",
+        "url": "mailto:talchrist10@gmail.com"
+      },
+      {
+        "id": "contact-2",
+        "platform": "LinkedIn",
+        "label": "in/worldbychris",
+        "url": "https://www.linkedin.com/in/worldbychris/"
+      },
+      {
+        "id": "contact-3",
+        "platform": "GitHub",
+        "label": "ChrisCoolDev",
+        "url": "https://github.com/ChrisCoolDev"
+      },
+      {
+        "id": "contact-4",
+        "platform": "Spotify",
+        "label": "Coding Playlist",
+        "url": "https://open.spotify.com/playlist/45FT6uGyOpQCgNaqMNSB1I"
+      }
+    ]
+  }
+}

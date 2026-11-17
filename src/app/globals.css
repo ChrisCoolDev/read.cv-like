@@ -1,26 +1,219 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --backgroundcolor: #ffffff;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-elevated: #f6f6f6;
+  --surface-hover: #efefef;
+  --grey1: #111111;
+  --grey2: #555555;
+  --grey3: #999999;
+  --wash2: #f6f6f6;
+  --text-1: #111111;
+  --text-2: #555555;
+  --text-3: #999999;
+  --accent-pill: #f6f6f6;
+  --border: #e5e5e5;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --code-bg: #f6f6f6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-golos), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: #ffffff;
+  color: #111111;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.021px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* Read.cv editorial MDX prose */
+.prose-readcv {
+  color: #555555;
+  font-size: 14px;
+  line-height: 1.72;
+  letter-spacing: 0.015em;
+}
+
+.prose-readcv > *:first-child {
+  margin-top: 0;
+}
+
+.prose-readcv h1,
+.prose-readcv h2,
+.prose-readcv h3,
+.prose-readcv h4 {
+  color: #111111;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  scroll-margin-top: 48px;
+}
+
+.prose-readcv h1 {
+  font-size: 20px;
+  line-height: 1.35;
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.prose-readcv h2 {
+  font-size: 16px;
+  line-height: 1.45;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-readcv h3 {
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin-top: 1.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-readcv p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose-readcv strong {
+  color: #111111;
+  font-weight: 500;
+}
+
+.prose-readcv a {
+  color: #111111;
+  text-decoration: underline;
+  text-decoration-color: #999999;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 150ms ease;
+}
+
+.prose-readcv a:hover {
+  text-decoration-color: #111111;
+}
+
+.prose-readcv ul,
+.prose-readcv ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+}
+
+.prose-readcv ul {
+  list-style-type: disc;
+}
+
+.prose-readcv ol {
+  list-style-type: decimal;
+}
+
+.prose-readcv li {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  padding-left: 0.2rem;
+}
+
+.prose-readcv li::marker {
+  color: #999999;
+}
+
+.prose-readcv blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid #e5e5e5;
+  color: #111111;
+  font-style: normal;
+}
+
+.prose-readcv blockquote p {
+  margin: 0.25rem 0;
+}
+
+.prose-readcv code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  background-color: #f6f6f6;
+  color: #111111;
+  padding: 0.15rem 0.38rem;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.prose-readcv pre {
+  margin: 1.5rem 0;
+  padding: 1rem 1.15rem;
+  background-color: #f6f6f6;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+
+.prose-readcv pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 12.5px;
+  color: #111111;
+}
+
+.prose-readcv hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 2rem 0;
+}
+
+.prose-readcv img {
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  margin: 1.5rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.prose-readcv table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 13px;
+}
+
+.prose-readcv th,
+.prose-readcv td {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.prose-readcv th {
+  color: #111111;
+  font-weight: 500;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
