@@ -48,6 +48,12 @@ export default async function HomePage() {
       />
 
       <CVSection
+        id="side-projects"
+        title="Side Projects"
+        items={profile.sections.sideProjects}
+      />
+
+      <CVSection
         id="writing"
         title="Writing"
         items={writingItems}
@@ -75,11 +81,7 @@ export default async function HomePage() {
         items={profile.sections.speaking}
       />
 
-      <CVSection
-        id="side-projects"
-        title="Side Projects"
-        items={profile.sections.sideProjects}
-      />
+      
 
       
 
