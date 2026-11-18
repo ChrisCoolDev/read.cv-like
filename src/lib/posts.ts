@@ -118,43 +118,53 @@ function parsePostFile(filePath: string, slug: string): Post {
 export function getAllPosts(options?: {
   includeDrafts?: boolean;
 }): PostSummary[] {
-  ensurePostsDir();
-  const includeDrafts = options?.includeDrafts ?? false;
-  const files = fs
-    .readdirSync(POSTS_DIR)
-    .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"));
+  try {
+    if (!fs.existsSync(POSTS_DIR)) {
+      return [];
+    }
+    const includeDrafts = options?.includeDrafts ?? false;
+    const files = fs
+      .readdirSync(POSTS_DIR)
+      .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"));
 
-  const posts = files
-    .map((file) => {
-      const slug = file.replace(/\.(mdx|md)$/, "");
-      const post = parsePostFile(path.join(POSTS_DIR, file), slug);
-      // Omit full content in summary list to keep payloads light
-      const { content: _content, ...summary } = post;
-      void _content;
-      return summary;
-    })
-    .filter((post) => includeDrafts || post.published)
-    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
-
-  return posts;
+    return files
+      .map((file) => {
+        const slug = file.replace(/\.(mdx|md)$/, "");
+        const post = parsePostFile(path.join(POSTS_DIR, file), slug);
+        // Omit full content in summary list to keep payloads light
+        const { content: _content, ...summary } = post;
+        void _content;
+        return summary;
+      })
+      .filter((post) => includeDrafts || post.published)
+      .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  } catch {
+    return [];
+  }
 }
 
 export function getAllPostsWithContent(options?: {
   includeDrafts?: boolean;
 }): Post[] {
-  ensurePostsDir();
-  const includeDrafts = options?.includeDrafts ?? false;
-  const files = fs
-    .readdirSync(POSTS_DIR)
-    .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"));
+  try {
+    if (!fs.existsSync(POSTS_DIR)) {
+      return [];
+    }
+    const includeDrafts = options?.includeDrafts ?? false;
+    const files = fs
+      .readdirSync(POSTS_DIR)
+      .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"));
 
-  return files
-    .map((file) => {
-      const slug = file.replace(/\.(mdx|md)$/, "");
-      return parsePostFile(path.join(POSTS_DIR, file), slug);
-    })
-    .filter((post) => includeDrafts || post.published)
-    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+    return files
+      .map((file) => {
+        const slug = file.replace(/\.(mdx|md)$/, "");
+        return parsePostFile(path.join(POSTS_DIR, file), slug);
+      })
+      .filter((post) => includeDrafts || post.published)
+      .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  } catch {
+    return [];
+  }
 }
 
 export function getPostBySlug(
@@ -164,25 +174,31 @@ export function getPostBySlug(
   if (!isValidSlug(slug)) {
     return null;
   }
-  ensurePostsDir();
 
-  const mdxPath = path.join(POSTS_DIR, `${slug}.mdx`);
-  const mdPath = path.join(POSTS_DIR, `${slug}.md`);
-  const targetPath = fs.existsSync(mdxPath)
-    ? mdxPath
-    : fs.existsSync(mdPath)
-      ? mdPath
-      : null;
+  try {
+    if (!fs.existsSync(POSTS_DIR)) {
+      return null;
+    }
+    const mdxPath = path.join(POSTS_DIR, `${slug}.mdx`);
+    const mdPath = path.join(POSTS_DIR, `${slug}.md`);
+    const targetPath = fs.existsSync(mdxPath)
+      ? mdxPath
+      : fs.existsSync(mdPath)
+        ? mdPath
+        : null;
 
-  if (!targetPath) {
+    if (!targetPath) {
+      return null;
+    }
+
+    const post = parsePostFile(targetPath, slug);
+    if (!post.published && !(options?.includeDrafts ?? false)) {
+      return null;
+    }
+    return post;
+  } catch {
     return null;
   }
-
-  const post = parsePostFile(targetPath, slug);
-  if (!post.published && !(options?.includeDrafts ?? false)) {
-    return null;
-  }
-  return post;
 }
 
 export function savePost(input: {
