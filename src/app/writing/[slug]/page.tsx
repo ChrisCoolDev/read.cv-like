@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { cacheLife, cacheTag } from "next/cache";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Rss } from "lucide-react";
@@ -8,6 +7,8 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/mdx-components";
 import { getCmsPostBySlug, getCmsPosts, getCmsProfile } from "@/lib/notion";
+
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const posts = await getCmsPosts();
@@ -36,10 +37,6 @@ export async function generateMetadata({
 }
 
 async function CompiledMdxBody({ source }: { source: string }) {
-  "use cache";
-  cacheLife("max");
-  cacheTag("cms", "posts");
-
   return (
     <div className="prose-readcv">
       <MDXRemote

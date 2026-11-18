@@ -3,6 +3,8 @@ import { CVSection } from "@/components/cv-section";
 import { ProfileHeader } from "@/components/profile-header";
 import { getCmsPosts, getCmsProfile } from "@/lib/notion";
 
+export const revalidate = 60;
+
 export default async function HomePage() {
   const [profile, posts] = await Promise.all([
     getCmsProfile(),

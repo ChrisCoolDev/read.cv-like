@@ -1,4 +1,3 @@
-import { cacheLife, cacheTag } from "next/cache";
 import {
   getAllPosts as getLocalPosts,
   getAllPostsWithContent as getLocalPostsWithContent,
@@ -108,6 +107,8 @@ async function notionFetch<T>(
   try {
     const res = await fetch(`${NOTION_API_BASE}${endpoint}`, {
       ...options,
+      signal: AbortSignal.timeout(5000),
+      next: { revalidate: 60 },
       headers: {
         Authorization: `Bearer ${token}`,
         "Notion-Version": NOTION_VERSION,
@@ -342,10 +343,6 @@ function extractAttachments(
 }
 
 export async function getCmsProfile(): Promise<ProfileData> {
-  "use cache";
-  cacheLife("minutes");
-  cacheTag("cms", "profile");
-
   const fallback = getLocalProfile();
   if (!getNotionToken()) {
     return fallback;
@@ -587,10 +584,6 @@ function mapNotionPageToPostSummary(page: NotionPage): PostSummary {
 }
 
 export async function getCmsPosts(): Promise<PostSummary[]> {
-  "use cache";
-  cacheLife("minutes");
-  cacheTag("cms", "posts");
-
   const fallback = getLocalPosts({ includeDrafts: false });
   if (!getNotionToken()) {
     return fallback;
@@ -620,10 +613,6 @@ export async function getCmsPosts(): Promise<PostSummary[]> {
 }
 
 export async function getCmsPostBySlug(slug: string): Promise<Post | null> {
-  "use cache";
-  cacheLife("minutes");
-  cacheTag("cms", "posts", `post-${slug}`);
-
   if (!getNotionToken()) {
     return getLocalPostBySlug(slug, { includeDrafts: false });
   }
@@ -669,10 +658,6 @@ export async function getCmsPostBySlug(slug: string): Promise<Post | null> {
 }
 
 export async function getCmsPostsWithContent(): Promise<Post[]> {
-  "use cache";
-  cacheLife("minutes");
-  cacheTag("cms", "posts");
-
   if (!getNotionToken()) {
     return getLocalPostsWithContent({ includeDrafts: false });
   }
