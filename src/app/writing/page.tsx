@@ -4,6 +4,8 @@ import { ArrowLeft, Rss } from "lucide-react";
 import { WritingIndex } from "@/components/writing-index";
 import { getCmsPosts, getCmsProfile } from "@/lib/notion";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Writing",
   description: "Essays, notes, and case studies.",

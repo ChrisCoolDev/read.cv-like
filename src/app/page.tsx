@@ -3,7 +3,7 @@ import { CVSection } from "@/components/cv-section";
 import { ProfileHeader } from "@/components/profile-header";
 import { getCmsPosts, getCmsProfile } from "@/lib/notion";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const [profile, posts] = await Promise.all([

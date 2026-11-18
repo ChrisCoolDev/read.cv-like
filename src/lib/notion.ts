@@ -605,7 +605,7 @@ export async function getCmsPosts(): Promise<PostSummary[]> {
     }
   );
 
-  if (!res || !res.results.length) {
+  if (!res) {
     return fallback;
   }
 

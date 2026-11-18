@@ -8,12 +8,7 @@ import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/mdx-components";
 import { getCmsPostBySlug, getCmsPosts, getCmsProfile } from "@/lib/notion";
 
-export const revalidate = 60;
-
-export async function generateStaticParams() {
-  const posts = await getCmsPosts();
-  return posts.map((post) => ({ slug: post.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
